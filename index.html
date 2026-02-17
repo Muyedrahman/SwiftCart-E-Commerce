@@ -1,115 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftCart E-Commerce</title>
-    <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon">
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- font integration -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftCart E-Commerce</title>
+  <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon">
 
-    <!-- tailwind + daisyUI from CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<!-- stylesheet -->
- <link rel="stylesheet" href="style.css">
+  <!-- Tailwind + DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
- <!-- NAVBAR -->
-<div class="navbar bg-base-100 shadow-md px-4 lg:px-8">
-  <!-- Logo / Start -->
+<body class="font-poppins bg-gray-50">
+
+<!-- NAVBAR -->
+<header class="navbar bg-base-100 shadow-md px-4 lg:px-8 sticky top-0 z-50">
   <div class="navbar-start">
     <a href="#" class="text-2xl font-bold text-indigo-600">SwiftCart</a>
   </div>
-
-  <!-- Menu -->
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="">Home</a></li>
-      <li><a href="">Products</a></li>
-      <li><a href="">About</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#footer">Contact</a></li>
     </ul>
   </div>
-
-  <!-- Cart Button / End -->
   <div class="navbar-end flex items-center space-x-4">
-    <!-- Cart Icon with Count -->
     <button class="btn btn-ghost relative">
       <i class="fas fa-shopping-cart text-xl"></i>
-      
     </button>
-
-    <!-- Mobile Menu btn -->
     <div class="lg:hidden dropdown">
       <label tabindex="0" class="btn btn-ghost">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+        <i class="fas fa-bars"></i>
       </label>
       <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-2">
-        <li><a href="">Home</a></li>
-        <li><a href="">Products</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#why">About</a></li>
+        <li><a href="#footer">Contact</a></li>
       </ul>
     </div>
   </div>
-</div>
+</header>
 
-
-<!-- HERO SECTION-->
-<section class="relative py-20 px-4 text-center text-white"
-  style="
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assets/image.png');
-    background-size: cover;
-    background-position: center;
-    
-  ">
+<!-- HERO -->
+<section id="hero" class="relative py-20 px-4 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('./assets/image.png'); background-size: cover; background-position: center;">
   <div class="relative z-10">
     <h1 class="text-4xl lg:text-6xl font-bold mb-4">Best Collection For You</h1>
-    <p class="mb-6 text-lg lg:text-2xl">
-      Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.
-    </p>
-    <button class="btn btn-lg btn-primary">Shop Now</button>
+    <p class="mb-6 text-lg lg:text-2xl">Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.</p>
+    <button class="btn btn-lg btn-primary" onclick="scrollToSection('#products')">Shop Now</button>
   </div>
 </section>
 
-  <!-- WHY CHOOSE US -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto text-center mb-12">
-      <h2 class="text-3xl font-bold">Why Choose Us</h2>
-      <p class="text-gray-500 mt-2">We provide the best shopping experience with top-notch services.</p>
+<!-- WHY CHOOSE US -->
+<section id="why" class="py-20">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-3xl font-bold">Why Choose Us</h2>
+    <p class="text-gray-500 mt-2">We provide the best shopping experience with top-notch services.</p>
+  </div>
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 px-4">
+    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
+      <div class="text-purple-800 text-3xl mb-4"><i class="fa-solid fa-truck-fast"></i></div>
+      <h3 class="font-semibold text-lg">Fast Delivery</h3>
+      <p class="text-gray-500 mt-2 text-sm">Get your orders delivered quickly and efficiently.</p>
     </div>
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 px-4">
-      <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
-        <div class="text-purple-800 text-3xl mb-4"><i class="fa-solid fa-truck-fast"></i></div>
-        <h3 class="font-semibold text-lg">Fast Delivery</h3>
-        <p class="text-gray-500 mt-2 text-sm">Get your orders delivered to your doorstep qulckly and effciently.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
-        <div class="text-purple-800 text-3xl mb-4"><i class="fa-regular fa-headphones"></i></div>
-        <h3 class="font-semibold text-lg">24/7 Support</h3>
-        <p class="text-gray-500 mt-2 text-sm">Our support team is available around the clock to assist you.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
-        <div class="text-purple-800 text-3xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3 class="font-semibold text-lg">Secure Payment</h3>
-        <p class="text-gray-500 mt-2 text-sm">Experience safe and secure transactions with our encrypted payment systems.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
-        <div class="text-purple-800 text-3xl mb-4"><i class="fa-solid fa-arrows-rotate"></i></div>
-        <h3 class="font-semibold text-lg">Easy Returns</h3>
-        <p class="text-gray-500 mt-2 text-sm">Not satisfied? Return your products easily within 30 days.</p>
-      </div>
+    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
+      <div class="text-purple-800 text-3xl mb-4"><i class="fa-regular fa-headphones"></i></div>
+      <h3 class="font-semibold text-lg">24/7 Support</h3>
+      <p class="text-gray-500 mt-2 text-sm">Our support team is available around the clock.</p>
     </div>
-  </section>
+    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
+      <div class="text-purple-800 text-3xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+      <h3 class="font-semibold text-lg">Secure Payment</h3>
+      <p class="text-gray-500 mt-2 text-sm">Safe and secure transactions with encrypted payments.</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
+      <div class="text-purple-800 text-3xl mb-4"><i class="fa-solid fa-arrows-rotate"></i></div>
+      <h3 class="font-semibold text-lg">Easy Returns</h3>
+      <p class="text-gray-500 mt-2 text-sm">Return your products easily within 30 days.</p>
+    </div>
+  </div>
+</section>
 
+<!-- TRENDING -->
+<section id="trending" class="py-16 px-4 lg:px-20">
+  <h2 class="text-3xl font-bold text-center mb-10">Trending Now</h2>
+  <div id="trending-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="py-16 px-4 lg:px-20">
+  <h2 class="text-3xl font-bold text-center mb-6">Our Products</h2>
+  <div id="category-container" class="flex flex-wrap justify-center gap-4 mb-8"></div>
+  <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+</section>
+
+<!-- MODAL -->
+<dialog id="product_modal" class="modal">
+  <div class="modal-box max-w-3xl">
+    <div id="modal-content"></div>
+    <div class="modal-action">
+      <button class="btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</dialog>
 
 <!-- footer -->
+ <footer id="footer" class="bg-[#1d2838]">
+
+        <div class="w-10/12 mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-10">
+
+                <!-- 01: Logo & Info -->
+                <div class="md:pr-7">
+                    <h2 class="text-2xl font-semibold text-blue-400 pb-4">SwiftCart</h2>
+                    <p class="text-gray-400 text-sm pb-7">Your one-stop soluition for all your fashion and lifestyle
+                        needs.
+                        Quality products, fast delivery, and excellent support</p>
+                </div>
+
+
+                <!-- 02: Quick Links -->
+                <div class="pb-7">
+                    <h2 class="text-gray-300 font-semibold pb-4">QUICK LINKS</h2>
+                    <button class="text-gray-300 text-base w-full text-left">Home</button>
+                    <button class="text-gray-300 text-base w-full text-left">Products</button>
+                    <button class="text-gray-300 text-base w-full text-left">About</button>
+                    <button class="text-gray-300 text-base w-full text-left">Contact</button>
+                </div>
+
+
+                <!-- 03: Support -->
+                <div class="pb-7">
+                    <h2 class="text-gray-300 font-semibold pb-4">SUPPORT</h2>
+                    <button class="text-gray-300 text-base w-full text-left">FAQ</button>
+                    <button class="text-gray-300 text-base w-full text-left">Shipping</button>
+                    <button class="text-gray-300 text-base w-full text-left">Returns</button>
+                    <button class="text-gray-300 text-base w-full text-left">Privacy Policy</button>
+                </div>
+
+
+                <!-- 04: Newsletter -->
+                <div>
+                    <h2 class="text-gray-300 font-semibold pb-4">
+                        SUBSCRIBE TO OUR NEWSLETTER
+                    </h2>
+
+                    <p class="text-gray-400 text-sm">
+                        The latest news, articles, and resources, sent to your inbox weekly.
+                    </p>
+
+                    <div class="pt-4 flex flex-col md:flex-row gap-2">
+                        <label class="input w-full md:flex-1">
+                            <input type="email" placeholder="mail@site.com" required />
+                        </label>
+
+                        <button class="btn btn-primary w-full md:w-auto">
+                            Subscribe
+                        </button>
+                    </div>
+
+                    <div class="validator-hint hidden">
+                        Enter valid email address
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="w-10/12 mx-auto border-t border-gray-700 pb-10"></div>
+
+        <div class="w-10/12 mx-auto flex">
+            <div class="flex-1">
+                <p class="text-sm text-gray-400">© 2026 SwiftCart, Inc. - All right reserved.</p>
+            </div>
+            <div class="space-x-2 pb-10">
+                <button><i class="fa-brands fa-facebook-f text-gray-400"></i></button>
+                <button><i class="fa-brands fa-twitter text-gray-400"></i></button>
+                <button><i class="fa-brands fa-instagram text-gray-400"></i></button>
+                <button><i class="fa-brands fa-linkedin-in text-gray-400"></i></button>
+                <button><i class="fa-solid fa-envelope text-gray-400"></i></button>
+            </div>
+        </div>
+
+    </footer>
+
+<script src="./script/index.js"></script>
 </body>
 </html>
